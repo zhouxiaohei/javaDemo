@@ -20,8 +20,8 @@ public class CompletableFutureDemoOne {
      * Async结尾的方法都是可以异步执行的，如果指定了线程池，会在指定的线程池中执行，如果没有指定，默认会在ForkJoinPool.commonPool()中执行。
      **/
     public static void main(String[] args) {
-        //testSimpleUsage();
-        testTransformResult();
+        testSimpleUsage();
+        //testTransformResult();
     }
 
     /**
@@ -45,7 +45,7 @@ public class CompletableFutureDemoOne {
             return "返回结果:成功";
         });
 
-        // thenRun，与supplyAsync同线程
+        // thenRun，主线程执行
         future.thenRun(() -> {
             try {
                 TimeUnit.SECONDS.sleep(2);

@@ -49,4 +49,21 @@ public class LockDemo {
             lock.unlock();
         }
     }
+
+    /**   不在本lock的监视器中 报错  **/
+//    public synchronized void test() throws InterruptedException {
+//        System.out.println(1111);
+//        notFull.signal();
+//        System.out.println(2222);
+//    }
+//
+//    public static void main(String[] args) {
+//        LockDemo demo = new LockDemo();
+//        try {
+//            demo.test();
+//            demo.notFull.signalAll();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

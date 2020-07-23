@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 public class RegexDemo {
 
     public static void main(String[] args) {
+        test2();
+    }
+
+    public static void test3() {
         String regex = "\\$\\{(.*?)\\}";
         // 把规则编译成模式对象
         Pattern p = Pattern.compile(regex);
@@ -25,7 +29,6 @@ public class RegexDemo {
             // 取值
             System.out.println(m.group());
         }
-
     }
 
     public static void test(){
@@ -36,6 +39,13 @@ public class RegexDemo {
 
         boolean isMatch = Pattern.matches(pattern, content);
         System.out.println("字符串中是否包含了 'runoob' 子字符串? " + isMatch);
+    }
+
+    public static void test2(){
+        String content = "/demo/serviced/exDemo/1234";
+        String pattern = ".*/exDemo/.*";
+        boolean isMatch = Pattern.matches(pattern, content);
+        System.out.println("字符串中是否包含: " + isMatch);
     }
 
 }

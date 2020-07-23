@@ -2,6 +2,7 @@ package com.zhou.threadDemo.threadPool;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -48,5 +49,26 @@ public class ScheduledThreadPoolDemo implements Runnable{
             e.printStackTrace();
         }
         log.info("----执行方法结束---");
+    }
+
+    public void testSingleScheduled(){
+        ScheduledExecutorService scheduled = Executors.newSingleThreadScheduledExecutor();
+//        scheduled.scheduleAtFixedRate(() ->{
+//            test();
+//        }, 10, 5, TimeUnit.SECONDS);
+
+        scheduled.schedule(() ->{
+            test();
+        }, 1, TimeUnit.SECONDS);
+    }
+
+    public static void test(){
+        try {
+            log.info("开始时间:{}" + new Date());
+            TimeUnit.SECONDS.sleep(3);
+            log.info("结束时间:{}" + new Date());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
