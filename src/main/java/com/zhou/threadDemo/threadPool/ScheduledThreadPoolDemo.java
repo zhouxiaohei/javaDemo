@@ -35,9 +35,14 @@ public class ScheduledThreadPoolDemo implements Runnable{
         ScheduledThreadPoolDemo scheduledThreadPoolDemo = new ScheduledThreadPoolDemo();
         //scheduledExecutorService.scheduleAtFixedRate(scheduledThreadPoolDemo, 5, 4, TimeUnit.SECONDS);
 
+        //延迟多久运行，仅仅运行一次
+        //scheduledExecutorService.schedule(scheduledThreadPoolDemo, 5, TimeUnit.SECONDS);
+
         //和上一个方法差不多，但是会等上一个任务结束，然后再等待delay时间去执行
         //scheduledExecutorService.scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)
         scheduledExecutorService.scheduleWithFixedDelay(scheduledThreadPoolDemo, 5, 4, TimeUnit.SECONDS);
+
+
     }
 
     @Override
