@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit;
 public class SemaphoreTest {
 
     public static void main(String[] args) {
-        test2();
+        test1();
+        //test2();
     }
 
     public static void test1() {

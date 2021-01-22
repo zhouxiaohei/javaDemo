@@ -45,6 +45,7 @@ class taskA implements  Runnable{
             log.info("丈夫去炒菜");
             TimeUnit.SECONDS.sleep(3);
             countDownLatch.countDown();
+            log.info("丈夫炒菜完成");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -64,8 +65,9 @@ class taskB implements  Runnable{
     public void run() {
         try {
             log.info("媳妇去盛饭");
-            TimeUnit.SECONDS.sleep(4);
+            TimeUnit.SECONDS.sleep(3);
             countDownLatch.countDown();
+            log.info("媳妇盛饭完成");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
