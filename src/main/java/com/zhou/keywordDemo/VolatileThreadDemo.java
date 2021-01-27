@@ -1,4 +1,4 @@
-package com.zhou.volatileDemo;
+package com.zhou.keywordDemo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -6,6 +6,15 @@ import lombok.extern.slf4j.Slf4j;
  * @ClassName VolatileThreadDemo
  * @Author JackZhou
  * @Date 2020/10/28  15:10
+ *
+ *  1、线程可见性
+ * 2、指令重排序 ---cpu乱序执行
+ *    1、验证代码
+ *    2、DCL(双重检查问题)问题、半初始化对象、使用对象出现问题
+ * 指令重排原理：
+ *    1、 voliatlie可见性
+ *     2、JVM层面内存屏障，相关规范
+ *     3、CPU层面lock、锁总线(有相关指令操作，考虑一致性问题和同步一样用锁)
  **/
 @Slf4j
 public class VolatileThreadDemo {
